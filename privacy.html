@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>개인정보 처리방침 — Suntrail</title>
+<meta name="description" content="Suntrail(해길) 앱의 개인정보 처리방침. 계정·광고·추적 없음. 날씨를 받을 때만 약 1 km 단위로 줄인 좌표를 Open-Meteo로 보냅니다.">
+<meta name="theme-color" content="#F1F5FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1630" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="./"><img src="img/icon-192.png" alt="" width="36" height="36">Suntrail</a>
+  <nav aria-label="페이지">
+    <a href="support.html">도움말</a>
+    <a href="privacy.html" aria-current="page">개인정보</a>
+    <a href="#en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap doc">
+<article class="measure" aria-labelledby="ko-title">
+  <h1 id="ko-title">개인정보 처리방침</h1>
+  <p class="meta">Suntrail(해길) iPhone 앱 · 시행일 2026년 11월 11일</p>
+
+  <div class="summary">
+    <p><strong>한눈에 보기</strong></p>
+    <ul>
+      <li>계정, 로그인, 광고, 분석 도구, 추적이 없어요.</li>
+      <li>해 위치와 일출·일몰 시각은 휴대폰 안에서 계산해요.</li>
+      <li>날씨를 받을 때만 약 1 km 단위로 줄인 좌표를 Open-Meteo로 보내요.</li>
+      <li>주소(동네 이름)를 표시하려고 위치를 Apple 지도 서비스에 보내요.</li>
+      <li>카메라 영상은 화면에 보여 주기만 하고 저장하거나 보내지 않아요.</li>
+      <li>휴대폰 안 날씨 캐시는 30일 넘게 쓰지 않으면 지워요.</li>
+    </ul>
+  </div>
+
+  <h2>1. 누가 운영하나요</h2>
+  <p>Suntrail(해길)은 개인 개발자 BYUNGWOO JEON이 만들고 운영하는 앱이에요. 개발자는 앱 사용자 정보를 받는 서버를 따로 두지 않아요. 이 방침은 앱이 어떤 정보를 어디로 보내는지를 설명해요.</p>
+
+  <h2>2. 모으지 않는 것</h2>
+  <ul>
+    <li>이름, 이메일, 전화번호 같은 연락처와 계정 정보</li>
+    <li>사진, 동영상, 카메라 영상, 사진 보관함</li>
+    <li>기기 식별자, 광고 식별자(IDFA), 사용 기록, 분석·크래시 수집</li>
+    <li>마이크, 연락처, 건강, 결제 정보</li>
+  </ul>
+  <p>앱에는 광고·분석·추적 도구(SDK)가 들어 있지 않고, 다른 앱이나 웹사이트의 정보와 합쳐 쓰는 일도 없어요.</p>
+
+  <h2>3. 위치</h2>
+  <p>위치는 ‘앱을 사용하는 동안’에만 쓰고, 앱이 화면에서 사라지면 위치 받기를 멈춰요.</p>
+  <h3>휴대폰 안에서만 쓰는 것</h3>
+  <p>지금 서 있는 곳의 해 높이·방향, 일출·일몰 시각, 나침반을 진북에 맞추는 계산은 모두 휴대폰 안에서 해요. 정확한 위치는 저장하지 않아요.</p>
+  <h3>Open-Meteo로 보내는 것 (날씨)</h3>
+  <ul>
+    <li>날씨를 받으려고 <strong>소수 둘째 자리(약 1 km)로 줄인 좌표</strong>와 날짜·시간대·받을 날씨 항목을 HTTPS로 <a href="https://open-meteo.com/">Open-Meteo</a>에 보내요.</li>
+    <li>날씨 지도를 볼 때는 화면에 보이는 지역의 격자 좌표를, 지도를 누르면 그 지점의 좌표를 같은 방식(약 1 km 단위)으로 보내요.</li>
+    <li>계정이나 기기 식별자는 함께 보내지 않아요. 인터넷 통신이라 Open-Meteo 서버에는 IP 주소가 전달돼요.</li>
+    <li>Open-Meteo는 <a href="https://open-meteo.com/en/terms">이용약관·개인정보 안내</a>에서 좌표가 들어 있을 수 있는 서버 기록을 90일 뒤 지우고, 무료 API의 IP 주소를 사용자 신원과 연결하지 않는다고 밝히고 있어요. Open-Meteo가 받은 정보는 그 안내를 따라요.</li>
+  </ul>
+  <h3>Apple 지도 서비스로 보내는 것 (주소 표시)</h3>
+  <ul>
+    <li>화면에 동네 이름을 보여 주려고 iOS의 역지오코딩 기능(Apple 지도 서비스)에 위치를 보내요. 약 2 km 넘게 움직였을 때만 다시 물어요.</li>
+    <li>날씨 지도의 지도 그림도 Apple 지도(MapKit)에서 받아요.</li>
+    <li>이 정보는 Apple의 <a href="https://www.apple.com/kr/legal/privacy/">개인정보 처리방침</a>을 따르고, 개발자는 받지 않아요. 받은 주소는 화면 표시에만 쓰고 저장하지 않아요.</li>
+  </ul>
+  <h3>위치 권한을 주지 않으면</h3>
+  <p>‘오늘의 해’ 탭의 ‘위치 바꾸기’에서 도시를 골라 쓸 수 있어요. 이때는 고른 도시 좌표로 계산하고, 날씨도 그 도시 좌표(약 1 km 단위)로 받아요.</p>
+
+  <h2>4. 카메라</h2>
+  <p>카메라는 AR 카메라 화면의 배경으로만 써요. 영상은 화면에 바로 보여 줄 뿐 사진·동영상으로 찍거나, 저장하거나, 어디로도 보내지 않아요. 권한을 주지 않으면 카메라 대신 가상 하늘을 보여 줘요.</p>
+
+  <h2>5. 동작 센서</h2>
+  <p>휴대폰이 어느 쪽을 보는지 알려고 자이로·가속도·자력계를 써요. 이 값은 휴대폰 안에서만 쓰고 저장하거나 보내지 않아요.</p>
+
+  <h2>6. 휴대폰 안에 남는 것</h2>
+  <ul>
+    <li><strong>날씨 캐시</strong>: 같은 날씨를 다시 받지 않으려고 받은 날씨를 휴대폰의 캐시 폴더(Library/Caches)에 저장해요. 약 1 km 단위 좌표와 날짜가 함께 남을 수 있어요. 30일 넘게 쓰지 않은 파일은 앱을 열 때 지우고, 전체 크기는 약 25 MB를 넘지 않게 오래된 것부터 지워요. 이 폴더는 iCloud·기기 백업에 들어가지 않고, 저장 공간이 모자라면 iOS가 지울 수 있어요. 휴대폰이 잠겨 있는 동안에는 읽을 수 없게 보호돼요.</li>
+    <li><strong>앱 설정 저장소</strong>: 날씨 지도에서 하루에 받은 요청 수만 저장해요(서버에 너무 많이 묻지 않으려고). 위치나 주소는 저장하지 않아요.</li>
+    <li>앱을 지우면 이 정보도 모두 지워져요.</li>
+  </ul>
+
+  <h2>7. 권한 끄기</h2>
+  <p>설정 &gt; 개인정보 보호 및 보안 &gt; 위치 서비스 &gt; Suntrail, 그리고 설정 &gt; Suntrail &gt; 카메라에서 언제든 끌 수 있어요. ‘정확한 위치’를 꺼도 앱을 쓸 수 있어요.</p>
+
+  <h2>8. 어린이</h2>
+  <p>앱은 나이와 상관없이 개인정보를 모으지 않아요. 어린이를 대상으로 한 별도 기능이나 광고도 없어요.</p>
+
+  <h2>9. 방침이 바뀌면</h2>
+  <p>내용이 바뀌면 이 페이지에 고친 내용과 새 시행일을 적어요.</p>
+
+  <h2>10. 문의</h2>
+  <p>개인정보에 관해 궁금한 점은 <a href="mailto:skskldlddk45@naver.com">skskldlddk45@naver.com</a>으로 보내 주세요.</p>
+</article>
+
+<div><hr class="lang-break"></div>
+
+<article class="measure" lang="en" id="en" aria-labelledby="en-title" style="margin-top:56px">
+  <h1 id="en-title">Privacy Policy</h1>
+  <p class="meta">Suntrail iPhone app · Effective November 11, 2026</p>
+
+  <div class="summary">
+    <p><strong>At a glance</strong></p>
+    <ul>
+      <li>No account, no login, no ads, no analytics, no tracking.</li>
+      <li>The sun’s position and sunrise and sunset times are calculated on your phone.</li>
+      <li>Only to get the weather, coordinates rounded to about 1 km are sent to Open-Meteo.</li>
+      <li>To show a place name, your location is sent to Apple’s map service.</li>
+      <li>The camera view is only shown on screen. It is never saved or sent.</li>
+      <li>The weather cache on your phone is cleared when unused for 30 days.</li>
+    </ul>
+  </div>
+
+  <h2>1. Who runs the app</h2>
+  <p>Suntrail is made and run by an individual developer, BYUNGWOO JEON. The developer does not run any server that receives information about app users. This policy explains what the app sends, and where.</p>
+
+  <h2>2. What we don’t collect</h2>
+  <ul>
+    <li>Contact or account details such as name, email or phone number</li>
+    <li>Photos, videos, the camera view or your photo library</li>
+    <li>Device identifiers, the advertising identifier (IDFA), usage history, analytics or crash reports</li>
+    <li>Microphone, contacts, health or payment information</li>
+  </ul>
+  <p>The app contains no advertising, analytics or tracking SDKs, and never combines its data with data from other apps or websites.</p>
+
+  <h2>3. Location</h2>
+  <p>Location is used only while you are using the app, and stops when the app leaves the screen.</p>
+  <h3>Used only on your phone</h3>
+  <p>The sun’s height and direction from where you stand, sunrise and sunset times, and the true-north compass correction are all calculated on your phone. Your precise location is not stored.</p>
+  <h3>Sent to Open-Meteo (weather)</h3>
+  <ul>
+    <li>To get the weather, the app sends <strong>coordinates rounded to two decimal places (about 1 km)</strong>, together with the dates, time zone and weather fields it needs, to <a href="https://open-meteo.com/">Open-Meteo</a> over HTTPS.</li>
+    <li>On the weather map, it sends the grid coordinates of the area on screen, and when you tap the map, the coordinates of that spot, rounded the same way.</li>
+    <li>No account or device identifier is sent. As with any internet request, Open-Meteo’s server receives your IP address.</li>
+    <li>In its <a href="https://open-meteo.com/en/terms">terms and privacy notice</a>, Open-Meteo states that server logs, which may contain coordinates, are deleted after 90 days, and that IP addresses for the free API are not linked to user identities. Information Open-Meteo receives is handled under that notice.</li>
+  </ul>
+  <h3>Sent to Apple’s map service (place name)</h3>
+  <ul>
+    <li>To show the name of your area, the app uses iOS reverse geocoding (Apple’s map service), which receives your location. It asks again only after you move more than about 2 km.</li>
+    <li>The weather map’s map tiles also come from Apple Maps (MapKit).</li>
+    <li>This is covered by Apple’s <a href="https://www.apple.com/legal/privacy/">Privacy Policy</a>, and the developer does not receive it. The place name is only shown on screen and is not stored.</li>
+  </ul>
+  <h3>If you don’t allow location</h3>
+  <p>You can choose a city in Today’s Sun &gt; Change Location. The app then calculates for that city and gets the weather for its coordinates (rounded to about 1 km).</p>
+
+  <h2>4. Camera</h2>
+  <p>The camera is used only as the background of the AR Camera screen. The live view is shown on screen and is never captured as a photo or video, saved, or sent anywhere. If you don’t allow the camera, the app shows a virtual sky instead.</p>
+
+  <h2>5. Motion sensors</h2>
+  <p>The gyroscope, accelerometer and magnetometer are used to know which way your phone is facing. These values are used only on your phone and are not stored or sent.</p>
+
+  <h2>6. What stays on your phone</h2>
+  <ul>
+    <li><strong>Weather cache</strong>: to avoid downloading the same weather again, the app keeps weather it has received in the phone’s cache folder (Library/Caches). Coordinates rounded to about 1 km and dates may be kept with it. Files unused for 30 days are deleted when the app opens, and the oldest files are removed so the cache stays under about 25 MB. This folder is not included in iCloud or device backups, iOS may clear it when storage runs low, and it can’t be read while the phone is locked.</li>
+    <li><strong>App settings</strong>: only the number of weather map requests made today is stored, so the app doesn’t ask the server too often. Location and place names are not stored.</li>
+    <li>Deleting the app deletes all of this.</li>
+  </ul>
+
+  <h2>7. Turning permissions off</h2>
+  <p>You can turn access off at any time in Settings &gt; Privacy &amp; Security &gt; Location Services &gt; Suntrail, and in Settings &gt; Suntrail &gt; Camera. The app also works with Precise Location turned off.</p>
+
+  <h2>8. Children</h2>
+  <p>The app does not collect personal information from anyone, of any age. It has no features or ads aimed at children.</p>
+
+  <h2>9. Changes</h2>
+  <p>If this policy changes, the updated text and a new effective date will be posted on this page.</p>
+
+  <h2>10. Contact</h2>
+  <p>For privacy questions, email <a href="mailto:skskldlddk45@naver.com">skskldlddk45@naver.com</a>.</p>
+</article>
+</main>
+
+<footer class="wrap foot">
+  <p>© 2026 BYUNGWOO JEON</p>
+  <p><a href="./">Suntrail</a> · <a href="support.html">도움말 / Help</a></p>
+</footer>
+</body>
+</html>

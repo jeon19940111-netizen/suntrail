@@ -1,0 +1,249 @@
+/* Suntrail 웹 페이지 공용 스타일 — 외부 글꼴·스크립트 없음. 색은 앱 화면(밤 남색·해 노랑·골든아워 주황·블루아워 파랑)에서 가져옴 */
+
+:root {
+  color-scheme: light dark;
+  --font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+
+  /* 낮 (라이트) */
+  --bg: #F1F5FB;
+  --surface: #FFFFFF;
+  --text: #14213D;
+  --muted: #4B5A78;
+  --rule: #D3DCEA;
+  --link: #A24F06;
+  --sun: #D69A00;
+  --golden: #C2620A;
+  --blue: #3B67DA;
+  --ground: #E3E9F3;
+  --focus: #3B67DA;
+
+  /* 하루 빛 띠 (앱 시간 막대와 같은 구간 색) */
+  --s-night: #18224A;
+  --s-astro: #24306A;
+  --s-nautical: #34469A;
+  --s-blue: #5B82EE;
+  --s-golden: #FF9E33;
+  --s-day: #8CC8F4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 밤 (다크) — 앱 하늘 지도 바깥 남색 */
+    --bg: #0D1630;
+    --surface: #131F3F;
+    --text: #E8EDF7;
+    --muted: #A7B3CF;
+    --rule: #26345B;
+    --link: #FFB85C;
+    --sun: #FFCC33;
+    --golden: #FF9E33;
+    --blue: #86A7FF;
+    --ground: #0F1A38;
+    --focus: #FFCC33;
+    --s-night: #0A1130;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--link); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  width: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+.measure { max-width: 38rem; }
+
+/* 머리 */
+.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 18px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+}
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+.top nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.95rem; }
+.top nav a { color: var(--muted); text-decoration: none; padding-block: 6px; }
+.top nav a:hover, .top nav a[aria-current="page"] { color: var(--text); }
+
+/* 글자 크기 */
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+h1 { font-size: clamp(2.25rem, 6.2vw, 4.1rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.45rem, 3vw, 1.85rem); font-weight: 760; }
+h3 { font-size: 1.125rem; font-weight: 720; letter-spacing: -0.01em; }
+p { margin: 0; }
+p + p { margin-top: 0.85em; }
+
+.lede { font-size: clamp(1.08rem, 2vw, 1.25rem); color: var(--text); margin-top: 22px; }
+.facts { color: var(--muted); margin-top: 14px; }
+.store { margin-top: 18px; font-weight: 650; }
+
+/* 첫 화면 */
+.hero { padding-top: clamp(28px, 6vw, 64px); }
+.hero h1 { max-width: 14em; }
+
+.chart { margin: clamp(32px, 5vw, 52px) 0 0; }
+.sunchart { width: 100%; height: auto; display: block; }
+.sunchart .ground { fill: var(--ground); }
+.sunchart .grid { stroke: var(--rule); stroke-width: 1.5; stroke-dasharray: 2 7; }
+.sunchart .horizon { stroke: var(--muted); stroke-width: 1.5; opacity: 0.55; }
+.sunchart .curve path { fill: none; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+.sunchart .c-day { stroke: var(--sun); }
+.sunchart .c-golden { stroke: var(--golden); }
+.sunchart .c-blue { stroke: var(--blue); }
+.sunchart .c-night { stroke: var(--muted); opacity: 0.4; stroke-width: 2.5; }
+.sunchart .c-below { stroke-dasharray: 8 8; stroke-width: 3.5; }
+.sunchart .hour { fill: var(--bg); stroke: var(--sun); stroke-width: 2.5; }
+.sunchart .sun { fill: #FFCC33; }
+.sunchart .sun-ring { fill: none; stroke: #FFCC33; stroke-width: 3; }
+.sunchart .lbl text { font-family: var(--font); font-size: 19px; font-weight: 650; fill: var(--muted); }
+.sunchart .lbl .t-day { fill: var(--text); }
+.sunchart .lbl .t-golden { fill: var(--golden); }
+.sunchart .lbl .t-blue { fill: var(--blue); }
+
+.strip {
+  position: relative;
+  height: 14px;
+  margin-top: 14px;
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 1px var(--rule);
+  background: /*STRIP*/linear-gradient(90deg, var(--s-night) 0.00% 23.33%, var(--s-astro) 23.33% 25.49%, var(--s-nautical) 25.49% 27.64%, var(--s-blue) 27.64% 28.33%, var(--s-golden) 28.33% 32.15%, var(--s-day) 32.15% 69.93%, var(--s-golden) 69.93% 73.75%, var(--s-blue) 73.75% 74.51%, var(--s-nautical) 74.51% 76.67%, var(--s-astro) 76.67% 78.82%, var(--s-night) 78.82% 100.00%)/*/STRIP*/;
+}
+.ticks {
+  position: relative;
+  height: 1.6em;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.ticks li { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.ticks li:first-child { transform: none; }
+.ticks li:last-child { transform: translateX(-100%); }
+.chart figcaption { margin-top: 10px; color: var(--muted); font-size: 0.95rem; max-width: 46rem; }
+
+/* 화면 세 개 */
+.section { padding-top: clamp(56px, 9vw, 96px); }
+.section > h2 { margin-bottom: 26px; }
+
+.screens {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.screens figure { margin: 0; }
+.screens img {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+.screens figcaption { margin-top: 16px; }
+.screens figcaption p { margin-top: 6px; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .screens { grid-template-columns: 1fr; gap: 28px; }
+  .screens figure { display: grid; grid-template-columns: minmax(110px, 38%) 1fr; gap: 16px; align-items: start; }
+  .screens img { border-radius: 16px; }
+  .screens figcaption { margin-top: 0; }
+}
+
+/* 그 밖의 기능 */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px clamp(24px, 4vw, 56px);
+  margin: 0;
+}
+.features dt { font-weight: 720; }
+.features dd { margin: 4px 0 0; color: var(--muted); }
+.features div { border-top: 1px solid var(--rule); padding-top: 14px; }
+@media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
+
+.mail { font-size: 1.15rem; font-weight: 700; }
+
+/* 언어 나눔 */
+.lang-break { margin-top: clamp(72px, 10vw, 120px); border: 0; border-top: 1px solid var(--rule); }
+
+/* 문서 (처리방침·도움말) */
+.doc { padding-top: clamp(24px, 5vw, 48px); }
+.doc h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.doc .meta { color: var(--muted); margin-top: 12px; }
+.doc h2 { font-size: 1.3rem; margin-top: 2.2em; margin-bottom: 0.6em; }
+.doc h3 { margin-top: 1.6em; margin-bottom: 0.4em; }
+.doc ul, .doc ol { padding-left: 1.3em; margin: 0.6em 0 0; }
+.doc li + li { margin-top: 0.4em; }
+.doc ul + p, .doc ol + p { margin-top: 0.85em; }
+.doc .summary {
+  margin-top: 28px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.doc .summary li + li { margin-top: 0.3em; }
+.toc { margin-top: 18px; color: var(--muted); }
+
+.faq details { border-top: 1px solid var(--rule); padding-block: 14px; }
+.faq details:last-of-type { border-bottom: 1px solid var(--rule); }
+.faq summary { cursor: pointer; font-weight: 700; list-style-position: outside; }
+.faq summary::marker { color: var(--muted); }
+.faq details > *:not(summary) { margin-top: 10px; color: var(--text); }
+.faq details p, .faq details li { color: var(--muted); }
+
+/* 발 */
+.foot {
+  margin-top: clamp(72px, 10vw, 112px);
+  padding-block: 28px 40px;
+  /* 위 줄은 본문 폭(좌우 여백 안쪽)에만 */
+  background: linear-gradient(var(--rule), var(--rule)) no-repeat center top / calc(100% - 2 * clamp(16px, 4vw, 32px)) 1px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.foot p + p { margin-top: 0.4em; }
+.foot a { color: var(--muted); }
+
+@media (max-width: 640px) {
+  .sunchart .lbl { display: none; }
+  .top nav { gap: 4px 14px; font-size: 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
+html { scroll-behavior: smooth; }
